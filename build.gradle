@@ -129,6 +129,7 @@ dependencies {
 
     implementation platform('com.google.cloud:libraries-bom:26.59.0')
     implementation fg.deobf("com.google.cloud:google-cloud-vertexai:1.20.1")
+    implementation fg.deobf("com.google.api.grpc:proto-google-cloud-vertexai-v1:1.1.0")
 
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

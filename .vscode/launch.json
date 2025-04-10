@@ -8,7 +8,7 @@
       "mainClass": "net.minecraftforge.bootstrap.ForgeBootstrap",
       "projectName": "MinecraftGCP",
       "cwd": "${workspaceFolder}/run",
-      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dexamplemod -Dforge.enableGameTest\u003dtrue -Djava.net.preferIPv6Addresses\u003dsystem -XstartOnFirstThread",
+      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dminecraftgcp -Dforge.enableGameTest\u003dtrue -Djava.net.preferIPv6Addresses\u003dsystem -XstartOnFirstThread",
       "args": "--launchTarget forge_userdev_client --version MOD_DEV --assetIndex 24 --assetsDir /Users/erschmid/.gradle/caches/forge_gradle/assets --gameDir .",
       "env": {
         "MOD_CLASSES": "${workspaceFolder}/build/sourcesSets/main",
@@ -24,7 +24,7 @@
       "projectName": "MinecraftGCP",
       "cwd": "${workspaceFolder}/run-data",
       "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Djava.net.preferIPv6Addresses\u003dsystem",
-      "args": "--launchTarget forge_userdev_data --assetIndex 24 --assetsDir /Users/erschmid/.gradle/caches/forge_gradle/assets --gameDir . --mod examplemod --all --output /Users/erschmid/Git/telpirion/MinecraftGCP/src/generated/resources --existing /Users/erschmid/Git/telpirion/MinecraftGCP/src/main/resources",
+      "args": "--launchTarget forge_userdev_data --assetIndex 24 --assetsDir /Users/erschmid/.gradle/caches/forge_gradle/assets --gameDir . --mod minecraftgcp --all --output /Users/erschmid/Git/telpirion/MinecraftGCP/src/generated/resources --existing /Users/erschmid/Git/telpirion/MinecraftGCP/src/main/resources",
       "env": {
         "MOD_CLASSES": "${workspaceFolder}/build/sourcesSets/main",
         "MCP_MAPPINGS": "official_1.21.5"
@@ -38,7 +38,7 @@
       "mainClass": "net.minecraftforge.bootstrap.ForgeBootstrap",
       "projectName": "MinecraftGCP",
       "cwd": "${workspaceFolder}/run",
-      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dexamplemod -Djava.net.preferIPv6Addresses\u003dsystem",
+      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dminecraftgcp -Djava.net.preferIPv6Addresses\u003dsystem",
       "args": "--launchTarget forge_userdev_server_gametest --gameDir .",
       "env": {
         "MOD_CLASSES": "${workspaceFolder}/build/sourcesSets/main",
@@ -53,7 +53,7 @@
       "mainClass": "net.minecraftforge.bootstrap.ForgeBootstrap",
       "projectName": "MinecraftGCP",
       "cwd": "${workspaceFolder}/run",
-      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dexamplemod -Dforge.enableGameTest\u003dtrue -Djava.net.preferIPv6Addresses\u003dsystem",
+      "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dREGISTRIES -Dforge.enabledGameTestNamespaces\u003dminecraftgcp -Dforge.enableGameTest\u003dtrue -Djava.net.preferIPv6Addresses\u003dsystem",
       "args": "--launchTarget forge_userdev_server --gameDir . --nogui",
       "env": {
         "MOD_CLASSES": "${workspaceFolder}/build/sourcesSets/main",
