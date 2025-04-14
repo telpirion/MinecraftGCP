@@ -3,23 +3,58 @@
  */
 package com.telpirion.minecraftplugin;
 
+import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Plugin extends JavaPlugin implements Listener {
+import com.mojang.brigadier.Message;
+
+import io.papermc.paper.chat.ChatRenderer;
+import io.papermc.paper.event.player.AsyncChatEvent;
+
+public class Plugin extends JavaPlugin implements Listener, ChatRenderer {
+
+    private Joke joke;
 
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
+
+        this.joke = new Joke();
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         event.getPlayer().sendMessage(Component.text("Hello, " + event.getPlayer().getName() + "!"));
+    }
+
+    @EventHandler
+    public void onChat(AsyncChatEvent event) {
+        event.renderer(this);
+
+        String message = LegacyComponentSerializer.legacyAmpersand().serialize(event.message());
+        var player = event.getPlayer();
+
+        getLogger().info("Player " + player.getName() + " sent message: " + message);
+
+        if (message.contains("joke")) {
+            player.sendMessage(Component.text(this.joke.getJoke()));
+        }
+    }
+
+    @Override
+    public Component render(Player source, Component sourceDisplayName, Component message, Audience viewer) {
+        getLogger().info(getName() + " rendering chat message");
+        return sourceDisplayName
+                .append(Component.text(": "))
+                .append(message);
     }
 
     
