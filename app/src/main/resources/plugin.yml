@@ -1,0 +1,7 @@
+name: MinecraftGCP
+version: 1.0.0
+main: com.telpirion.minecraftplugin.Plugin
+description: A Minecraft plugin that connects to Google Cloud
+author: Eric Schmidt
+website: https://github.com/telpirion
+api-version: '1.21.4'
