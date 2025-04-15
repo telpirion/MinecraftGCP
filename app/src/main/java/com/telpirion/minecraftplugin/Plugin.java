@@ -14,8 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.mojang.brigadier.Message;
-
 import io.papermc.paper.chat.ChatRenderer;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
@@ -37,15 +35,20 @@ public class Plugin extends JavaPlugin implements Listener, ChatRenderer {
 
     @EventHandler
     public void onChat(AsyncChatEvent event) {
-        event.renderer(this);
+        try {
+            event.renderer(this);
 
-        String message = LegacyComponentSerializer.legacyAmpersand().serialize(event.message());
-        var player = event.getPlayer();
-
-        getLogger().info("Player " + player.getName() + " sent message: " + message);
-
-        if (message.contains("joke")) {
-            player.sendMessage(Component.text(this.joke.getJoke()));
+            String message = LegacyComponentSerializer.legacyAmpersand().serialize(event.message());
+            var player = event.getPlayer();
+    
+            getLogger().info("Player " + player.getName() + " sent message: " + message);
+    
+            if (message.contains("joke")) {
+    
+                player.sendMessage(Component.text(this.joke.getJoke()));
+            }
+        } catch (Exception e) {
+            getLogger().severe("Error rendering chat message: " + e.getMessage());
         }
     }
 
