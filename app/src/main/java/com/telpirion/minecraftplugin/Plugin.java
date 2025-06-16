@@ -59,7 +59,4 @@ public class Plugin extends JavaPlugin implements Listener, ChatRenderer {
                 .append(Component.text(": "))
                 .append(message);
     }
-
-    
-
 }

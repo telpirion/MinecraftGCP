@@ -10,6 +10,8 @@ import java.util.logging.Logger;
 
 public class Joke {
   private ArrayList<String> jokes = new ArrayList<>();
+  private Random random = new Random();
+
 
   public Joke() {}
 
@@ -22,15 +24,8 @@ public class Joke {
     return this.populateJoke(projectId, location, modelName, textPrompt);
   }
 
-  private String populateJoke(String projectId, String location, String modelName, String textPrompt) throws IOException {
-    Logger.getLogger("JOKE: ").info("Populating joke...");
-    try (VertexAI vertexAI = new VertexAI(projectId, location)) {
-      GenerativeModel model = new GenerativeModel(modelName, vertexAI);
-
-      GenerateContentResponse response = model.generateContent(textPrompt);
-      String output = ResponseHandler.getText(response);
-      Logger.getLogger("JOKE: ").info(output);
-      return output;
-    }
+  public String getJoke() {
+    int index = random.nextInt(jokes.size());
+    return jokes.get(index);
   }
 }
