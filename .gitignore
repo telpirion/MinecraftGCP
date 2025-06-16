@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -48,3 +49,5 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+
+server/libraries

@@ -5,3 +5,6 @@ description: A Minecraft plugin that connects to Google Cloud
 author: Eric Schmidt
 website: https://github.com/telpirion
 api-version: '1.21.4'
+libraries:
+  - "com.google.api.grpc:proto-google-cloud-vertexai-v1:1.1.0"
+  - "com.google.cloud:google-cloud-vertexai:1.20.1"
