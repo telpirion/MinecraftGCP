@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class Joke {
   private ArrayList<String> jokes = new ArrayList<>();
+  private Random random = new Random();
+
 
   public Joke() {
     jokes.add("Why did the chicken cross the road? To get to the other side!");
@@ -13,7 +15,6 @@ public class Joke {
   }
 
   public String getJoke() {
-    Random random = new Random();
     int index = random.nextInt(jokes.size());
     return jokes.get(index);
   }

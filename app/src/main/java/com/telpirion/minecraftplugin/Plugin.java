@@ -14,8 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.mojang.brigadier.Message;
-
 import io.papermc.paper.chat.ChatRenderer;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
@@ -56,7 +54,4 @@ public class Plugin extends JavaPlugin implements Listener, ChatRenderer {
                 .append(Component.text(": "))
                 .append(message);
     }
-
-    
-
 }
